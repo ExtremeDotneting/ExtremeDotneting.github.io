@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="./js/zip.js"></script>
+    <meta charset="utf-8">
+    <title>Decompress</title>
+</head>
+
+<body>
+    <p id='textH1'></p>
+
+    <script>
+        /* TEST:
+        let compStr=compressString("aaa ЫЫЫЫ 123 🤣😊😊aaa ЫЫЫЫ 123 🤣😊😊aaa ЫЫЫЫ 123 🤣😊😊aaa ЫЫЫЫ 123 🤣😊😊aaa ЫЫЫЫ 123 🤣😊😊");
+        console.log(compStr);
+        let origStr=decompressString(compStr);
+        console.log(origStr);
+        */
+
+        let passedStr = window.location.hash.substring(1);
+        passedStr = decodeURI(passedStr);
+        var textElement = document.getElementById('textH1');
+        if (passedStr.length === 0) {
+            textElement.innerText = "Text to decompress is empty.";
+        }
+        else {
+
+            textElement.innerText = decompressString(passedStr);;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Execute JS from hash.</title>
+</head>
+
+<body>
+  <p id='textH1'></p>
+
+  <script>
+    let passedStr = window.location.hash.substring(1);
+    passedStr = decodeURI(passedStr);
+    if (passedStr.length === 0) {
+      var textElement = document.getElementById('textH1');
+      textElement.innerText = "Redirect url is empty.";
+    }
+    else {
+      window.location.href = passedStr;
+    }
+  </script>
+
+</body>
+
+</html>
