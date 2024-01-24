@@ -19,7 +19,7 @@
         */
 
         let passedStr = window.location.hash.substring(1);
-        passedStr = decodeURI(passedStr);
+        passedStr = decodeURIComponent(passedStr);
         var textElement = document.getElementById('textH1');
         if (passedStr.length === 0) {
             textElement.innerText = "Text to decompress is empty.";

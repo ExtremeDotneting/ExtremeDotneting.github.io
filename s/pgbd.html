@@ -11,7 +11,7 @@
 
   <script>
     let passedStr = window.location.hash.substring(1);
-    passedStr = decodeURI(passedStr);
+    passedStr = decodeURIComponent(passedStr);
     if (passedStr.length === 0) {
       var textElement = document.getElementById('textH1');
       textElement.innerText = "Body html is empty.";
