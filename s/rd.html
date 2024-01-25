@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Execute JS from hash.</title>
+  <title>Redirect to url from hash.</title>
 </head>
 
 <body>
@@ -16,9 +16,11 @@
       var textElement = document.getElementById('textH1');
       textElement.innerText = "Redirect url is empty.";
     }
-    else {
-      //alert(passedStr);
+    else {      
       window.location.href = passedStr;
+      if(!passedStr.startsWith("http")){
+        window.location.href = "about:blank";
+      }
     }
   </script>
 
